@@ -6,6 +6,7 @@ parcel build ./static/index.html --no-cache
 
 Для тестирования использовать команду:
 npm run start
+Проект запускается по адресу http://localhost:3000/
 
 Домен на Netlify:
 https://phenomenal-kangaroo-6d47cc.netlify.app/
