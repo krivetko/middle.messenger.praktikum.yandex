@@ -1,0 +1,19 @@
+{{#each contacts}}
+<div class="contact_list__element {{#if active}} active {{/if}}">
+    <div class="contact_list__avatar">
+        <button class="contact_list__avatar__button">{{avatar_letter}}</button>
+    </div>
+    <div class="contact_list__body">
+        <div class="contact_list__body__nickname">{{nickname}}</div>
+        <div class="contact_list__body__lastmsg">{{lastmsg}}</div>
+    </div>
+    <div class="contact_list__aside">
+        <div class="contact_list__aside__time">{{time}}</div>
+        <div class="contact_list__aside__badge">
+        {{#if new_msgs}}
+            <div class="contact_list__aside__counter">{{new_msgs}}</div>
+        {{/if}}
+        </div>
+    </div>
+</div>
+{{/each}}
