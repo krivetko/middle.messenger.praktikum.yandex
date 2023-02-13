@@ -6,3 +6,6 @@ parcel build ./static/index.html --no-cache
 
 Для тестирования использовать команду:
 npm run start
+
+Домен на Netlify:
+https://phenomenal-kangaroo-6d47cc.netlify.app/
