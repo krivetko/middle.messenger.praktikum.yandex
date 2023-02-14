@@ -11,40 +11,40 @@ const profile_context = {
     avatar: empty_avatar,
     fields: [
         {
-            label: 'email',
-            name: 'Почта',
+            label: 'Почта',
+            name: 'email',
             type: 'text',
-            plchldr: 'pochta@yandex.ru'
+            placeholder: 'pochta@yandex.ru'
         },
         {
-            label: 'login',
-            name: 'Логин',
+            label: 'Логин',
+            name: 'login',
             type: 'text',
-            plchldr: 'ivanivanov'
+            placeholder: 'ivanivanov'
         },
         {
-            label: 'first_name',
-            name: 'Имя',
+            label: 'Имя',
+            name: 'first_name',
             type: 'text',
-            plchldr: 'Иван'
+            placeholder: 'Иван'
         },
         {
-            label: 'second_name',
-            name: 'Фамилия',
+            label: 'Фамилия',
+            name: 'second_name',
             type: 'text',
-            plchldr: 'Иванов'
+            placeholder: 'Иванов'
         },
         {
-            label: 'nickname',
-            name: 'Имя в чате',
+            label: 'Имя в чате',
+            name: 'nickname',
             type: 'text',
-            plchldr: 'Иван'
+            placeholder: 'Иван'
         },
         {
-            label: 'phone',
-            name: 'Телефон',
+            label: 'Телефон',
+            name: 'phone',
             type: 'text',
-            plchldr: '+7 (909) 967 30 30'
+            placeholder: '+7 (909) 967 30 30'
         }
     ],
     nickname: 'Иван'
@@ -54,22 +54,22 @@ const pwd_change_context = {
     avatar: empty_avatar,
     fields: [
         {
-            label: 'oldPassword',
-            name: 'Старый пароль',
+            label: 'Старый пароль',
+            name: 'oldPassword',
             type: 'password',
-            plchldr: ''
+            placeholder: ''
         },
         {
-            label: 'newPassword',
-            name: 'Новый пароль',
+            label: 'Новый пароль',
+            name: 'newPassword',
             type: 'password',
-            plchldr: ''
+            placeholder: ''
         },
         {
-            label: 'newPasswordConfirmation',
-            name: 'Повторите новый пароль',
+            label: 'Повторите новый пароль',
+            name: 'newPasswordConfirmation',
             type: 'password',
-            plchldr: ''
+            placeholder: ''
         }
     ],
     button: "Сохранить"
@@ -77,11 +77,9 @@ const pwd_change_context = {
 
 module.exports = {
     profile: function() {
-        const html = template(profile_context);
-        return html;
+        return template(profile_context);
     },
     change_pwd: function() {
-        const html = template_change_pwd(pwd_change_context);
-        return html;
+        return template_change_pwd(pwd_change_context);
     }
 }

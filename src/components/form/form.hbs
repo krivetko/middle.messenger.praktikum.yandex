@@ -1,6 +1,6 @@
 <form action="" class="{{form_class}}">
     {{#each fields}}
-    <label for="{{label}}" class="form__label form__label-hidden">{{name}}</label>
-    <input type="{{type}}" class="form__input" name="{{label}}" id="auth_form_{{label}}" placeholder="{{name}}" required>
+    <label for="auth_form_{{name}}" class="form__label form__label-hidden">{{label}}</label>
+    <input type="{{type}}" class="form__input" name="{{name}}" id="auth_form_{{name}}" placeholder="{{label}}" required>
     {{/each}}
 </form>

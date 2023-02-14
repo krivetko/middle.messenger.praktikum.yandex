@@ -10,13 +10,13 @@ const auth_context = {
     form_class: "form__auth", 
     fields: [
     {
-        label: 'login',
-        name: 'Логин',
+        label: 'Логин',
+        name: 'login',
         type: 'text'
     },
     { 
-        label: 'password',
-        name: 'Пароль',
+        label: 'Пароль',
+        name: 'password',
         type: 'password'
     }
     ],
@@ -25,7 +25,6 @@ const auth_context = {
 
 module.exports = {
     auth: function() {
-        const html = template(auth_context);
-        return html;
+        return template(auth_context);
     }
 }

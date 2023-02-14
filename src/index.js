@@ -16,7 +16,7 @@ const routes = {
 }
 
 function render(html) {
-    const main = document.querySelector('main');
+    const main = document.querySelector('#app');
     main.innerHTML = html;
 }
 

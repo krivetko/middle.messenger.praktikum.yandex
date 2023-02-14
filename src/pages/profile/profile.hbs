@@ -2,7 +2,7 @@
     <div class="profile">
         <div class="profile__avatar">
             <button class="profile__avatar_change">
-                <img class="profile__avatar_img" src="{{avatar}}" alt="Аватар" />
+                <img class="profile__avatar_img" src="{{avatar}}" alt="Avatar" />
             </button>
         </div>
         <div class="profile__header">
@@ -11,8 +11,8 @@
         <div class="profile__fields">
             {{#each fields}}
                 <div class="profile__row">
-                    <label for="{{label}}" class="profile_form__label">{{name}}</label>
-                    <input type="{{type}}" class="profile_form__input" name="{{label}}" id="profile_form_{{label}}" placeholder="{{plchldr}}" required>
+                    <label for="profile_form_{{name}}" class="profile_form__label">{{label}}</label>
+                    <input type="{{type}}" class="profile_form__input" name="{{name}}" id="profile_form_{{name}}" placeholder="{{placeholder}}" required>
                 </div>
             {{/each}}
         </div>

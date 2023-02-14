@@ -10,38 +10,38 @@ const register_context = {
     form_class: "form__register", 
     fields: [
         {
-            label: 'email',
-            name: 'Почта',
+            label: 'Почта',
+            name: 'email',
             type: 'text'
         },
         {
-            label: 'login',
-            name: 'Логин',
+            label: 'Логин',
+            name: 'login',
             type: 'text'
         },
         {
-            label: 'first_name',
-            name: 'Имя',
+            label: 'Имя',
+            name: 'first_name',
             type: 'text'
         },
         {
-            label: 'second_name',
-            name: 'Фамилия',
+            label: 'Фамилия',
+            name: 'second_name',
             type: 'text'
         },
         {
-            label: 'phone',
-            name: 'Телефон',
+            label: 'Телефон',
+            name: 'phone',
             type: 'text'
         },
         { 
-            label: 'password',
-            name: 'Пароль',
+            label: 'Пароль',
+            name: 'password',
             type: 'password'
         },
         { 
-            label: 'confirm_password',
-            name: 'Пароль (ещё раз)',
+            label: 'Пароль (ещё раз)',
+            name: 'confirm_password',
             type: 'password'
         }
     ],
@@ -50,7 +50,6 @@ const register_context = {
 
 module.exports = {
     register: function() {
-        const html = template(register_context);
-        return html;
+        return template(register_context);
     }
 }

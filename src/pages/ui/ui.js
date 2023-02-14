@@ -79,7 +79,6 @@ const ui_context = {
 
 module.exports = {
     ui: function() {
-        const html = template(ui_context);
-        return html;
+        return template(ui_context);
     }
 }
