@@ -1,0 +1,76 @@
+.active {
+    background: #E4EDFD;
+}
+
+.contact_list__element {
+    display: flex;
+    flow-direction: row;
+    height: 75px;
+    padding: 5px;
+    border-bottom: 1px solid #EAEAEA;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.contact_list__avatar {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.contact_list__avatar__button {
+    border-radius: 50%;
+    border: none;
+    height: 47px;
+    width: 47px;
+    color: #999999;
+}
+
+.contact_list__body {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    flex-grow: 1;
+}
+
+.contact_list__body__nickname {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.contact_list__body__lastmsg {
+    color: #999999;
+    font-size: 12px;
+    grid-row: 2 / span 2;
+}
+
+.contact_list__aside {
+    display: grid;
+    justify-contents: right;
+    text-align: right;
+    align-items: center;
+}
+
+.contact_list__aside__time {
+    font-weight: 500;
+    font-size: 9px;
+    color: #999999;
+}
+
+.contact_list__aside__badge {
+    height: 100%;
+}
+
+.contact_list__aside__counter {
+    border: none;
+    border-radius: 50%;
+    background: #3369F3;
+    font-weight: 500;
+    font-size: 11px;
+    color: #FFF;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

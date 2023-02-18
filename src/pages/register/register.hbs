@@ -1,0 +1,10 @@
+<div class="register_container">
+    <div class="register">
+        <h3 class="register__header">Регистрация</h3>
+        {{> form fields=fields form_class=form_class}}
+        {{> button name=button class='register__button'}}
+        <div class="register__auth">
+            <a class="register__auth_link" onclick="goToPage('auth')" href="#">Войти</a>
+        </div>
+    </div>
+</div>

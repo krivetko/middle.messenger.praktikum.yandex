@@ -1,0 +1,40 @@
+<div class="ui">
+    <div class="ui__contact_list">
+        <div class="ui__contact_list__header">
+            <div class="ui__contact_list__header__profile">
+                <a href="" class="ui__contact_list__header__profile-link">Профиль ></a>
+            </div>
+            <form class="ui__contact_list__header__search">
+                <input type="search" placeholder="Поиск" class="ui__contact_list__header__search-input">
+            </form>
+        </div>
+        <div class="ui__contact_list__contacts">
+            {{> contact_list contacts=contacts}}
+        </div>
+    </div>
+    <div class="ui__conversation">
+        <div class="ui__conversation__header">
+            <div class="ui__conversation__header__contact">
+                <button class="ui__conversation__header__contact__avatar">В</button>
+                <span class="ui__conversation__header__contact__name">Вадим</span>
+            </div>
+            <div class="ui__conversation__header__more">
+                <button class="ui__conversation__header__more-button">&#10247</button>
+            </div>
+        </div>
+        <div class="ui__conversation__body">
+            <div class="ui__conversation__body__grid">
+                {{> conversation messages=messages double_check=double_check}}
+            </div>
+        </div>
+        <div class="ui__conversation__message">
+            <button class="ui__conversation__message__attach">
+                <img class="ui__conversation__message__attach_img" src="{{attach}}" alt="Attach" />
+            </button>
+            <input type="text" name="message" placeholder="Сообщение" class="ui__conversation__message__input">
+            <button class="ui__conversation__message__send">
+                <img class="ui__conversation__message__send_img" src="{{right_arrow}}" alt="Send" />
+            </button>
+        </div>
+    </div>
+</div>
