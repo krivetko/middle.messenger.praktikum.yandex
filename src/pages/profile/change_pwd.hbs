@@ -1,0 +1,20 @@
+<div class="profile_container">
+    <div class="profile">
+        <div class="profile__avatar">
+            <button class="profile__avatar_change">
+                <img class="profile__avatar_img" src="{{avatar}}" alt="Avatar" />
+            </button>
+        </div>
+        <div class="profile__fields">
+            {{#each fields}}
+                <div class="profile__row">
+                    <label for="profile_form_{{name}}" class="profile_form__label">{{label}}</label>
+                    <input type="{{type}}" class="profile_form__input" name="{{name}}" id="profile_form_{{name}}" placeholder="{{placeholder}}" required>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="profile__save">
+        {{> button name=button class='save__button'}}
+    </div>
+</div>
