@@ -1,6 +1,3 @@
-<form action="" class="{{form_class}}">
-    {{#each fields}}
-    <label for="{{label}}" class="form__label form__label-hidden">{{name}}</label>
-    <input type="{{type}}" class="form__input" name="{{label}}" id="auth_form_{{label}}" placeholder="{{name}}" required>
-    {{/each}}
-</form>
+{{#each inputs}}
+{{{this}}}
+{{/each}}
