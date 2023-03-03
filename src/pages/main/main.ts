@@ -1,6 +1,6 @@
 import Block from '../../utils/Block';
-import {SidePanel} from '../../components/sidepanel/sidepanel';
-import template from "./main.hbs";
+import { SidePanel } from '../../components/sidepanel/sidepanel';
+import template from './main.hbs';
 import { RightPanel } from '../../components/rightpanel/rightpanel';
 
 // import contact_list from "../../components/contact_list/contact_list.hbs";
@@ -9,9 +9,9 @@ import { RightPanel } from '../../components/rightpanel/rightpanel';
 // Handlebars.registerPartial('conversation', conversation);
 // Handlebars.registerPartial('contact_list', contact_list);
 
-//import attach from '../../../static/icons/attach.png';
-//import right_arrow from '../../../static/icons/right_arrow.png';
-//import double_check from '../../../static/icons/double_check.png';
+// import attach from '../../../static/icons/attach.png';
+// import right_arrow from '../../../static/icons/right_arrow.png';
+// import double_check from '../../../static/icons/double_check.png';
 // import hasselblad from '../../../static/img/hasselblad.png';
 
 // const ui_context = {
@@ -37,7 +37,7 @@ import { RightPanel } from '../../components/rightpanel/rightpanel';
 //     ],
 //     attach: attach,
 //     right_arrow: right_arrow,
-//     
+//
 // };
 
 // module.exports = {
@@ -47,17 +47,17 @@ import { RightPanel } from '../../components/rightpanel/rightpanel';
 // }
 
 export class MainPage extends Block {
-    constructor() {
-        super()
-    }
+  constructor() {
+    super();
+  }
 
-    init() {
-       this.element!.classList.add('ui'); 
+  init() {
+       this.element!.classList.add('ui');
        this.children.sidePanel = new SidePanel();
        this.children.rightPanel = new RightPanel();
-    }
+  }
 
-    protected render() {
-        return this.compile(template, {});
-    }
+  protected render() {
+    return this.compile(template, {});
+  }
 }

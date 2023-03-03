@@ -1,5 +1,5 @@
 import Block from '../../utils/Block';
-import template from "./error.hbs";
+import template from './error.hbs';
 
 export interface ErrorProps {
     code: number,
@@ -7,15 +7,15 @@ export interface ErrorProps {
 }
 
 export class Error extends Block {
-    constructor(props: ErrorProps) {
-        super('div', props)
-    }
+  constructor(props: ErrorProps) {
+    super('div', props);
+  }
 
-    init() {
-       this.element!.classList.add('error'); 
-    }
+  init() {
+       this.element!.classList.add('error');
+  }
 
-    protected render() {
-        return this.compile(template, this.props);
-    }
+  protected render() {
+    return this.compile(template, this.props);
+  }
 }

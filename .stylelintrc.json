@@ -1,8 +1,7 @@
 {
-    "extends": ["stylelint-config-standard"],
-    "rules": {
-      "color-hex-case": "lower",
-      "at-rule-no-unknown": null
-    },
-    "ignoreFiles": ["dist/*"]
-} 
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "no-descending-specificity": null,
+    "selector-class-pattern": null
+  }
+}
