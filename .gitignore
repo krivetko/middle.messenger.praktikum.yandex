@@ -10001,3 +10001,7 @@ node_modules/highlight.js/lib/languages/autoit.js
 node_modules/highlight.js/lib/languages/avrasm.js
 node_modules/highlight.js/lib/languages/awk.js
 node_modules/highlight.js/lib/languages/axapta.js
+.parcel-cache/data.mdb
+.parcel-cache/lock.mdb
+.parcel-cache/data.mdb
+.parcel-cache/lock.mdb
