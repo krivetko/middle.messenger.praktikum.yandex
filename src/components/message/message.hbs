@@ -1,0 +1,13 @@
+{{#if img}}
+    <img class="message__img" src="{{img}}" alt="Attached image"/>
+{{else}}
+    <div class="message__text">
+        {{text}}
+    </div>
+{{/if}}
+<div class="message__time">
+{{#if double_check}}
+    <img class="message__double_check_img" src="{{double_check}}" alt="Double check"/>
+{{/if}}
+<span class="{{class}}__time">{{time}}</span>
+</div>

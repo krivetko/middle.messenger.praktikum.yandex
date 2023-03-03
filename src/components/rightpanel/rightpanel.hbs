@@ -1,0 +1,19 @@
+{{{contact_header}}}
+
+<div class="ui__conversation__body">
+    <div class="ui__conversation__body__grid">
+        {{#each messages}}
+            {{{this}}}
+        {{/each}}
+    </div>
+</div>
+
+<form class="ui__conversation__message" id="ui__conversation__message">
+    <button class="ui__conversation__message__attach">
+        <img class="ui__conversation__message__attach_img" src="{{attach}}" alt="Attach" />
+    </button>
+    {{{message_input}}}
+    <button class="ui__conversation__message__send" type="submit" form="ui__conversation__message">
+        <img class="ui__conversation__message__send_img" src="{{right_arrow}}" alt="Send" />
+    </button>
+</form>
