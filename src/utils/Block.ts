@@ -8,7 +8,7 @@ export default class Block {
     FLOW_RENDER: 'flow:render',
     FLOW_CDU: 'flow:component-did-update',
   };
-
+  //@ts-ignore
   private _id: string;
 
   protected props: any;
