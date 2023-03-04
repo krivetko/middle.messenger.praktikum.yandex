@@ -10,6 +10,7 @@ const tests: Record<string, RegExp> = {
   newPasswordConfirmation: /^(?=.*[A-Z])(?=.*\d).{8,40}$/,
   phone: /^[+]?\d{10,15}$/,
   message: /^.+$/i,
+  display_name: /^.+$/i,
 };
 
 export class Validator {

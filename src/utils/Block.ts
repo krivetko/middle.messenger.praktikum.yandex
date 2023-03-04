@@ -1,7 +1,9 @@
 import { v4 as makeUUID } from 'uuid';
 import { EventBus } from './EventBus';
+import { TemplateDelegate } from 'handlebars';
 
-export default class Block {
+type Props<P extends Record<string, unknown> = any> = { events?: Record<string, () => void> } & P;
+export default class Block<P extends Record<string, any> = any> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -11,17 +13,17 @@ export default class Block {
   //@ts-ignore
   private _id: string;
 
-  protected props: any;
+  protected props: Props<P>;
 
   public children: Record<string, Block> | Record<string, Block[]>;
 
   private _element: null | HTMLElement = null;
 
-  private _meta: {tagName: string; props: any;};
+  private _meta: {tagName: string; props: P;};
 
   private eventBus: EventBus;
 
-  constructor(tagName = 'div', propsWithChildren: any = {}) {
+  constructor(tagName = 'div', propsWithChildren: P = {} as P) {
     const eventBus = new EventBus();
     const { props, children } = this._getChildrenAndProps(propsWithChildren);
 
@@ -42,7 +44,7 @@ export default class Block {
   }
 
   private _getChildrenAndProps(childrenAndProps: any) {
-    const props: Record<string, any> = {};
+    const props: P = {} as P;
     const children: Record<string, Block> | Record<string, Block[]> = {};
     Object.entries(childrenAndProps).forEach(([key, value]) => {
       if (Array.isArray(value) && value.every((element) => element instanceof Block)) {
@@ -50,7 +52,7 @@ export default class Block {
       } else if (value instanceof Block) {
         children[key] = value;
       } else {
-        props[key] = value;
+        props[key as keyof P] = value as P[keyof P];
       }
     });
     return { props, children };
@@ -100,7 +102,7 @@ export default class Block {
 
   }
 
-  private _componentDidUpdate(oldProps: any, newProps: any) {
+  private _componentDidUpdate(oldProps: P, newProps: P) {
     const response = this.componentDidUpdate(oldProps, newProps);
     if (response) {
       this._removeEvents();
@@ -108,11 +110,11 @@ export default class Block {
     }
   }
 
-  protected componentDidUpdate(oldProps: any, newProps: any) {
+  protected componentDidUpdate(oldProps: P, newProps: P) {
     return oldProps !== newProps;
   }
 
-  public setProps = (nextProps: any) => {
+  public setProps = (nextProps: Partial<P>) => {
     if (!nextProps) {
       return;
     }
@@ -134,7 +136,7 @@ export default class Block {
     return new DocumentFragment();
   }
 
-  protected compile(template: (context: any) => string, context: any) {
+  protected compile(template: TemplateDelegate, context: any) {
     const contextAndStubs = { ...context };
 
     Object.entries(this.children).forEach(([name, component]) => {
@@ -181,19 +183,19 @@ export default class Block {
     return this.element;
   }
 
-  private _makePropsProxy(props: any) {
+  private _makePropsProxy(props: P) {
     const self = this;
-    const proxy: ProxyConstructor = new Proxy(props, {
+    return new Proxy(props, {
       get(target, prop) {
-        if (target[prop]) {
-          const value = target[prop];
+        if (target[prop as keyof P]) {
+          const value = target[prop as keyof P];
           return typeof value === 'function' ? value.bind(self) : value;
         }
       },
       set(target, prop, value) {
-        if (target[prop] && target[prop] !== value) {
-          const oldProp = target[prop];
-          target[prop] = value;
+        if (target[prop as keyof P] && target[prop as keyof P] !== value) {
+          const oldProp = target[prop as keyof P];
+          target[prop as keyof P] = value;
           self.eventBus.emit(Block.EVENTS.FLOW_CDU, oldProp, value);
         }
         return true;
@@ -202,7 +204,6 @@ export default class Block {
         throw new Error(`нет доступа: ${String(target)} ${String(prop)}`);
       },
     });
-    return proxy;
   }
 
   private _createDocumentElement(tagName: string) {

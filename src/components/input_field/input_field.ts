@@ -11,10 +11,12 @@ export interface inputFieldProps {
     placeholder?: string
     class?: string,
     label_hidden?: boolean,
-    error_text: string
+    error_text: string,
+    hasError?: boolean,
+    events?: Record<string, (event: Event) => void>
 }
 
-export class InputField extends Block {
+export class InputField extends Block<inputFieldProps> {
   constructor(props: inputFieldProps, parent: Input) {
     super('input', {
       ...props,

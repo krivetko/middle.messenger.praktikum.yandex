@@ -1,5 +1,4 @@
 import template from './profile.hbs';
-// import template_change_pwd from "./change_pwd.hbs";
 import Block from '../../utils/Block';
 import empty_avatar from '../../../static/icons/empty_avatar.png';
 import { Form, formProps } from '../../components/form/form';
@@ -41,7 +40,7 @@ const profile_context: formProps = {
     },
     {
       label: 'Имя в чате',
-      name: 'nickname',
+      name: 'display_name',
       type: 'text',
       placeholder: 'Иван',
       class: 'profile__row',

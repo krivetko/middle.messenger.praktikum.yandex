@@ -14,7 +14,7 @@ export interface inputProps {
     error_text: string
 }
 
-export class Input extends Block {
+export class Input extends Block<inputProps> {
   constructor(props: inputProps) {
     super('div', props);
   }

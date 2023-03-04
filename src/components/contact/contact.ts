@@ -12,7 +12,7 @@ export interface contactProps {
     events?: Record<string, () => void>
 }
 
-export class Contact extends Block {
+export class Contact extends Block<contactProps> {
   constructor(props: contactProps) {
     super('div', {
       ...props,

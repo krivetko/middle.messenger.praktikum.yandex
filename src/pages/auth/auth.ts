@@ -32,10 +32,9 @@ export class AuthPage extends Block {
 
   init() {
        this.element!.classList.add('auth_container');
-       this.children.auth_form = new Form(auth_context);
-       this.children.button = new Button({
-         class: 'auth__button', label: 'Авторизоваться', type: 'submit', form: 'form__auth',
-       });
+       this.children.auth_form = new Form({...auth_context, submit_button: new Button({
+        class: 'auth__button', label: 'Авторизоваться', type: 'submit', form: 'form__auth',
+      })});
   }
 
   protected render() {

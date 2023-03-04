@@ -1,8 +1,3 @@
-// import {render_404} from './pages/404/404.ts';
-// import {render_500} from './pages/500/500.ts';
-// import {auth} from './pages/auth/auth.ts';
-// import {register} from './pages/register/register.ts';
-// import {profile, change_pwd} from './pages/profile/profile.ts';
 import { MainPage } from './pages/main/main';
 import { Page4xx } from './pages/404/404';
 import { Page5xx } from './pages/500/500';

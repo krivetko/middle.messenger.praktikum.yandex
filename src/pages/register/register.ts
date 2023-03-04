@@ -72,10 +72,9 @@ export class RegisterPage extends Block {
 
   init() {
        this.element!.classList.add('register_container');
-       this.children.register_form = new Form(register_context);
-       this.children.button = new Button({
-         class: 'register__button', label: 'Зарегистрироваться', type: 'submit', form: 'form__register',
-       });
+       this.children.register_form = new Form({...register_context, submit_button: new Button({
+        class: 'register__button', label: 'Зарегистрироваться', type: 'submit', form: 'form__register',
+      })});
   }
 
   protected render() {

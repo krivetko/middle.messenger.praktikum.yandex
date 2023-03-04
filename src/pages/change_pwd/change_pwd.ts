@@ -38,12 +38,10 @@ export class PasswordChangePage extends Block {
 
   init() {
         this.element!.classList.add('profile_container');
-        this.children.button = new Button({
+        this.children.profile_fields = new Form({...pwd_change_context, submit_button: new Button({
           label: 'Сохранить', type: 'submit', class: 'save__button', form: 'profile__fields',
-        });
-        this.children.profile_fields = new Form(pwd_change_context);
+        })});
   }
-
   protected render() {
     return this.compile(template, { avatar: empty_avatar });
   }

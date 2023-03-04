@@ -9,7 +9,7 @@ interface messageProps {
     class: string
 }
 
-export class Message extends Block {
+export class Message extends Block<messageProps> {
   constructor(props: messageProps) {
     super('div', props);
   }

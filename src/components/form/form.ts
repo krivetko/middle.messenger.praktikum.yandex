@@ -3,13 +3,16 @@ import { Input, inputProps } from '../input/input';
 import template from './form.hbs';
 import { Validator } from '../../utils/Validator';
 import { InputError } from '../input_error/input_error';
+import { Button } from '../button/button';
 
 export interface formProps {
     class: string,
-    inputs: inputProps[];
+    inputs: inputProps[],
+    events?: Record<string, (event: Event) => void>,
+    submit_button?: Button;
 }
 
-export class Form extends Block {
+export class Form extends Block<formProps> {
   constructor(props: formProps) {
     super('form', {
       ...props,
@@ -37,6 +40,9 @@ export class Form extends Block {
         const inputs: Input[] = [];
         this.props.inputs.forEach((element: inputProps) => inputs.push(new Input({ ...element, form_class: this.props.class })));
         this.children.inputs = inputs;
+        if (this.props.submit_button) {
+          this.children.submit_button = this.props.submit_button;
+        }
   }
 
   protected render() {

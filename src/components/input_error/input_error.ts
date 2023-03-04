@@ -6,21 +6,21 @@ export interface inputErrorProps {
     show_error: boolean,
 }
 
-export class InputError extends Block {
+export class InputError extends Block<inputErrorProps> {
   constructor(props: inputErrorProps) {
     super('div', props);
   }
 
   init() {
         this.element!.classList.add('input__error');
-        if (this.props.show_error) {
-            this.element!.style.display = 'block';
-        } else {
-            this.element!.style.display = 'none';
-        }
   }
 
   protected render() {
     return this.compile(template, this.props);
+  }
+  
+  show() {
+    this.getContent()!.style.display = 'block';
+    this.getContent()!.style.position = 'absolute';
   }
 }

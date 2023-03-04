@@ -8,7 +8,7 @@ export interface buttonProps {
     form?: string
 }
 
-export class Button extends Block {
+export class Button extends Block<buttonProps> {
   constructor(props: buttonProps) {
     super('button', props);
   }
@@ -16,7 +16,9 @@ export class Button extends Block {
   init() {
         this.element!.classList.add(this.props.class);
         this.element!.setAttribute('type', this.props.type);
-        this.element!.setAttribute('form', this.props.form);
+        if (this.props.form) {
+          this.element!.setAttribute('form', this.props.form);
+        }
   }
 
   protected render() {
