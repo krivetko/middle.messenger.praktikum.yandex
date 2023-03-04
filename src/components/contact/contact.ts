@@ -1,5 +1,5 @@
-import Block from '../../utils/Block'
-import template from "./contact.hbs";
+import Block from '../../utils/Block';
+import template from './contact.hbs';
 
 export interface contactProps {
     avatar_letter: string,
@@ -12,33 +12,35 @@ export interface contactProps {
     events?: Record<string, () => void>
 }
 
-export class Contact extends Block {
+export class Contact extends Block<contactProps> {
+  constructor(props: contactProps) {
+    super('div', {
+      ...props,
+      events: {
+        mouseover: () => this._hoverOn(),
+        mouseleave: () => this._hoverOff(),
+      },
+    });
+  }
 
-    constructor(props: contactProps) {
-        super('div', {...props, events: {
-            mouseover: () => this._hoverOn(),
-            mouseleave: () => this._hoverOff()
-        }});
-    }
-
-    init() {
+  init() {
         this.element!.classList.add('contact_list__element');
         if (this.props.active) {
             this.element!.classList.add('active');
         }
-    }
+  }
 
-    protected render() {
-        return this.compile(template, this.props);
-    }
+  protected render() {
+    return this.compile(template, this.props);
+  }
 
-    private _hoverOn() {
+  private _hoverOn() {
         this.element!.classList.add('chat_hovered');
-        this.setProps({hovered: true});
-    }
+        this.setProps({ hovered: true });
+  }
 
-    private _hoverOff() {
+  private _hoverOff() {
         this.element!.classList.remove('chat_hovered');
-        this.setProps({hovered: false});
-    }
+        this.setProps({ hovered: false });
+  }
 }

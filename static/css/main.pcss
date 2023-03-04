@@ -8,7 +8,7 @@
 .ui__contact_list {
     width: 300px;
     height: 95vh;
-    background: #FBFBFB;
+    background: var(--grey-background);
     padding: 10px; 
 }
 
@@ -17,8 +17,8 @@
     display: grid;
     top: 0px;
     height: 100px;
-    border-bottom: 1px solid #EAEAEA;
-    background: #FBFBFB;
+    border-bottom: 1px solid var(--grey-border);
+    background: var(--grey-background);
 }
 
 .ui__contact_list__header__search {
@@ -32,8 +32,8 @@
     height: 32px;
     border-radius: 5px;
     border: none;
-    background: #EFEFEF;   
-    color: #999999;
+    background: var(--grey-input);   
+    color: var(--slight-grey);
 }
 
 .ui__contact_list__header__search-input::placeholder {
@@ -57,13 +57,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-left: #EAEAEA;
+    border-left: var(--grey-border);
     padding: 10px;
 }
 
 .ui__conversation__header {
     height: 50px;
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid var(--grey-border);
     display: flex;
     align-items: center;
 }
@@ -74,7 +74,7 @@
 
 .ui__conversation__header__contact__avatar {
     border-radius: 50%;
-    color: #999999;
+    color: var(--slight-grey);
     border: none;
     height: 34px;
     width: 34px;
@@ -83,7 +83,7 @@
 .ui__conversation__header__contact__name {
     font-weight: 600;
     font-size: 16px;
-    color: #1E1E1E;
+    color: var(--head-color);
     padding-left: 10px;
 }
 
@@ -104,7 +104,7 @@
 
 .ui__conversation__message {
     height: 50px;
-    border-top: 1px solid #EAEAEA;
+    border-top: 1px solid var(--grey-border);
     align-items: center;
     display: flex;
     align-items: center;
@@ -123,20 +123,20 @@
     flex-grow: 1;
     height: 32px;
     border-radius: 30px;
-    background: #EFEFEF;
+    background: var(--grey-input);
     margin: 0 10px;
     border: none;
 }
 
 .ui__conversation__message__input::placeholder {
     padding-left: 25px;
-    color: #999999;
+    color: var(--slight-grey);
 }
 
 .ui__conversation__message__send {
     border: none;
     border-radius: 50;
-    background: #3369F3;
+    background: var(--blue-accent);
     height: 28px;
     width: 28px;
 }
@@ -148,12 +148,11 @@
 
 .message {
     max-width: 50%;
-    background: #00bfb6;
     padding: 5px;
     text-align: left;
     font-weight: 500;
     font-size: 12px;
-    color: #1E1E1E;
+    color: var(--head-color);
     position:relative;
     border-radius: 10px;
     margin: 5px;
@@ -161,7 +160,7 @@
 }
 
 .message-in {
-    background: #F8F8F8;
+    background: var(--message-in);
     justify-self: left;
     align-self: bottom;
 }
@@ -171,16 +170,16 @@
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 5px solid #F8F8F8;
+    border-left: 5px solid var(--message-in);
     border-right: 5px solid transparent;
-    border-top: 5px solid #F8F8F8;
+    border-top: 5px solid var(--message-in);
     border-bottom: 5px solid transparent;
     left: 0px;
     top: 0px;
 }
 
 .message-out {
-    background: #E4EDFD;
+    background: var(--message-out);
     justify-self: right;
     align-self: bottom;
 }
@@ -191,9 +190,9 @@
     height: 0px;
     position: absolute;
     border-left: 5px solid transparent;
-    border-right: 5px solid #E4EDFD;
+    border-right: 5px solid var(--message-out);
     border-top: 5px solid transparent;
-    border-bottom: 5px solid #E4EDFD;
+    border-bottom: 5px solid var(--message-out);
     right: 0px;
     bottom: 0px;
 }
@@ -202,11 +201,11 @@
     justify-self: right;
     font-weight: 500;
     font-size: 12px;
-    color: #1E1E1E;
+    color: var(--head-color);
 }
 
 .message-out__time {
-    color: #3369F3;
+    color: var(--blue-accent);
 }
 
 .message__double_check_img {
@@ -215,7 +214,7 @@
 }
 
 .active {
-    background: #E4EDFD;
+    background: var(--message-out);
 }
 
 .contact_list__element {
@@ -223,7 +222,7 @@
     flow-direction: row;
     height: 75px;
     padding: 5px;
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid var(--grey-border);
     font-family: 'Inter';
     font-style: normal;
 }
@@ -239,7 +238,7 @@
     border: none;
     height: 47px;
     width: 47px;
-    color: #999999;
+    color: var(--slight-grey);
 }
 
 .contact_list__body {
@@ -254,7 +253,7 @@
 }
 
 .contact_list__body__lastmsg {
-    color: #999999;
+    color: var(--slight-grey);
     font-size: 12px;
     grid-row: 2 / span 2;
 }
@@ -269,7 +268,7 @@
 .contact_list__aside__time {
     font-weight: 500;
     font-size: 9px;
-    color: #999999;
+    color: var(--slight-grey);
 }
 
 .contact_list__aside__badge {
@@ -279,10 +278,10 @@
 .contact_list__aside__counter {
     border: none;
     border-radius: 50%;
-    background: #3369F3;
+    background: var(--blue-accent);
     font-weight: 500;
     font-size: 11px;
-    color: #FFF;
+    color: var(--main-background);
     text-align: center;
     width: 20px;
     height: 20px;
@@ -292,5 +291,5 @@
 }
 
 .chat_hovered {
-    background: #bbe1ed;
+    background: var(--hovered-item);
 }
