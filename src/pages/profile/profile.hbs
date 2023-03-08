@@ -1,25 +1,16 @@
-<div class="profile_container">
-    <div class="profile">
-        <div class="profile__avatar">
-            <button class="profile__avatar_change">
-                <img class="profile__avatar_img" src="{{avatar}}" alt="Avatar" />
-            </button>
-        </div>
-        <div class="profile__header">
-            <h3>{{nickname}}</h3>
-        </div>
-        <div class="profile__fields">
-            {{#each fields}}
-                <div class="profile__row">
-                    <label for="profile_form_{{name}}" class="profile_form__label">{{label}}</label>
-                    <input type="{{type}}" class="profile_form__input" name="{{name}}" id="profile_form_{{name}}" placeholder="{{placeholder}}" required>
-                </div>
-            {{/each}}
-        </div>
-        <div class="profile__footer">
-            <a class="profile__change_data link link-blue" href="#">Изменить данные</a>
-            <a class="profile__change_pwd link link-blue" href="#">Изменить пароль</a>
-            <a class="profile__cancel link link-red" href="#">Выйти</a>
-        </div>
+<div class="profile">
+    <div class="profile__avatar">
+        <button class="profile__avatar_change">
+            <img class="profile__avatar_img" src="{{avatar}}" alt="Avatar" />
+        </button>
+    </div>
+    <div class="profile__header">
+        <h3>{{nickname}}</h3>
+    </div>
+    {{{profile_fields}}}
+    <div class="profile__footer">
+        <a class="profile__change_data link link-blue" href="#">Изменить данные</a>
+        <a class="profile__change_pwd link link-blue" href="#">Изменить пароль</a>
+        <a class="profile__cancel link link-red" href="#">Выйти</a>
     </div>
 </div>
