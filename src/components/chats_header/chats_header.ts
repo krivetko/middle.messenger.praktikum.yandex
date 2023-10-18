@@ -3,7 +3,7 @@ import template from './chats_header.hbs';
 
 export class ChatsHeader extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

@@ -58,7 +58,7 @@ const profile_context: formProps = {
 
 export class ProfilePage extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

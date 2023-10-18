@@ -8,7 +8,7 @@ export interface ErrorProps {
 
 export class Error extends Block<ErrorProps> {
   constructor(props: ErrorProps) {
-    super('div', props);
+    super(props);
   }
 
   init() {

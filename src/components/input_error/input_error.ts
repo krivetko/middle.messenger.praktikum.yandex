@@ -8,11 +8,7 @@ export interface inputErrorProps {
 
 export class InputError extends Block<inputErrorProps> {
   constructor(props: inputErrorProps) {
-    super('div', props);
-  }
-
-  init() {
-        this.element!.classList.add('input__error');
+    super(props);
   }
 
   protected render() {

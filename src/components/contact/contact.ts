@@ -14,7 +14,7 @@ export interface contactProps {
 
 export class Contact extends Block<contactProps> {
   constructor(props: contactProps) {
-    super('div', {
+    super({
       ...props,
       events: {
         mouseover: () => this._hoverOn(),

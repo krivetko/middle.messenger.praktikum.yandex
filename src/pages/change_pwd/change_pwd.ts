@@ -33,7 +33,7 @@ const pwd_change_context: formProps = {
 
 export class PasswordChangePage extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

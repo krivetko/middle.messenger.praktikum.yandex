@@ -1,42 +1,48 @@
 import { MainPage } from './pages/main/main';
-import { Page4xx } from './pages/404/404';
-import { Page5xx } from './pages/500/500';
+//import { Page4xx } from './pages/404/404';
+//import { Page5xx } from './pages/500/500';
 import { AuthPage } from './pages/auth/auth';
 import { RegisterPage } from './pages/register/register';
 import { ProfilePage } from './pages/profile/profile';
-import { PasswordChangePage } from './pages/change_pwd/change_pwd';
+//import { PasswordChangePage } from './pages/change_pwd/change_pwd';
+import Router from './utils/Router';
 
-const routes: Record<string, any> = {
-  404: Page4xx,
-  500: Page5xx,
-  auth: AuthPage,
-  register: RegisterPage,
-  profile: ProfilePage,
-  change_pwd: PasswordChangePage,
-  ui: MainPage,
-};
-
-function render(className: any) {
-  const main = document.querySelector('#app');
-  const page = new className();
-    main!.innerHTML = '';
-    main!.append(page.getContent()!);
-    page.dispatchComponentDidMount();
+enum Routes {
+  Index = '/',
+  Register = '/register',
+  Profile = '/profile',
+  Messenger = '/messenger',
 }
 
-declare global {
-    interface Window {
-        goToPage: (name: string) => void;
-    }
-}
+window.addEventListener('DOMContentLoaded', async () => {
+  Router
+    .use(Routes.Index, AuthPage)
+    .use(Routes.Register, RegisterPage)
+    .use(Routes.Profile, ProfilePage)
+    .use(Routes.Messenger, MainPage)
 
-window.goToPage = function (name: string) {
-  render(routes[name]);
-};
+  //let isProtectedRoute = true;
 
-window.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('#app');
-  const page = new MainPage();
-    root!.append(page.getContent()!);
-    page.dispatchComponentDidMount();
+  // switch (window.location.pathname) {
+  //   case Routes.Index:
+  //   case Routes.Register:
+  //     //isProtectedRoute = false;
+  //     break;
+  // }
+
+  try {
+  //   await AuthController.fetchUser();
+
+     Router.start();
+
+  //   if (!isProtectedRoute) {
+       Router.go(Routes.Index)
+  //   }
+  } catch (e) {
+     Router.start();
+
+  //   if (isProtectedRoute) {
+       Router.go(Routes.Index);
+  //   }
+  }
 });

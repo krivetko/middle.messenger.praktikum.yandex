@@ -4,7 +4,7 @@ import template from './main.hbs';
 import { RightPanel } from '../../components/rightpanel/rightpanel';
 export class MainPage extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

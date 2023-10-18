@@ -27,17 +27,16 @@ const auth_context: formProps = {
 
 export class AuthPage extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {
-       this.element!.classList.add('auth_container');
        this.children.auth_form = new Form({...auth_context, submit_button: new Button({
         class: 'auth__button', label: 'Авторизоваться', type: 'submit', form: 'form__auth',
       })});
   }
 
   protected render() {
-    return this.compile(template, {});
+    return this.compile(template, {...this.props});
   }
 }

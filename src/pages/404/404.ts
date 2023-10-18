@@ -9,7 +9,7 @@ const error404: ErrorProps = {
 
 export class Page4xx extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

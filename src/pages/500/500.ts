@@ -9,7 +9,7 @@ const error500: ErrorProps = {
 
 export class Page5xx extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

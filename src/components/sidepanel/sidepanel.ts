@@ -47,7 +47,7 @@ const chatsList = [
 
 export class SidePanel extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

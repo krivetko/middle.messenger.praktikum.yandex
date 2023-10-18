@@ -16,13 +16,10 @@ export interface inputProps {
 
 export class Input extends Block<inputProps> {
   constructor(props: inputProps) {
-    super('div', props);
+    super(props);
   }
 
   init() {
-    if (this.props.class) {
-            this.element!.classList.add(this.props.class);
-    }
     this.children.input_field = new InputField(this.props, this);
     this.children.input_error = new InputError({ error_text: this.props.error_text, show_error: false });
   }
@@ -48,4 +45,17 @@ export class Input extends Block<inputProps> {
       }
     }
   }
+
+  public setValue(value: string) {
+    return (this.element as HTMLInputElement).value = value;
+  }
+
+  public getName() {
+    return (this.element as HTMLInputElement).name;
+  }
+
+  public getValue() {
+    return (this.element as HTMLInputElement).value;
+  }
+
 }

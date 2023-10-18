@@ -10,15 +10,7 @@ export interface buttonProps {
 
 export class Button extends Block<buttonProps> {
   constructor(props: buttonProps) {
-    super('button', props);
-  }
-
-  init() {
-        this.element!.classList.add(this.props.class);
-        this.element!.setAttribute('type', this.props.type);
-        if (this.props.form) {
-          this.element!.setAttribute('form', this.props.form);
-        }
+    super(props);
   }
 
   protected render() {

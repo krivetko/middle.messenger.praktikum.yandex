@@ -18,7 +18,7 @@ export interface inputFieldProps {
 
 export class InputField extends Block<inputFieldProps> {
   constructor(props: inputFieldProps, parent: Input) {
-    super('input', {
+    super({
       ...props,
       hasError: false,
       events: {
@@ -32,16 +32,6 @@ export class InputField extends Block<inputFieldProps> {
         },
       },
     });
-  }
-
-  init() {
-        this.element!.setAttribute('type', this.props.type);
-        this.element!.classList.add(`${this.props.form_class}__input`);
-        this.element!.setAttribute('name', this.props.name);
-        this.element!.setAttribute('id', `${this.props.form_class}_${this.props.name}`);
-        if (this.props.placeholder) {
-            this.element!.setAttribute('placeholder', this.props.placeholder);
-        }
   }
 
   protected render() {

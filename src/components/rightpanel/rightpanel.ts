@@ -31,7 +31,7 @@ const messagesList = [
 
 export class RightPanel extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

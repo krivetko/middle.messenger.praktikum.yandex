@@ -14,7 +14,7 @@ export interface formProps {
 
 export class Form extends Block<formProps> {
   constructor(props: formProps) {
-    super('form', {
+    super({
       ...props,
       events: {
         submit: (event: Event) => {
@@ -35,8 +35,6 @@ export class Form extends Block<formProps> {
   }
 
   init() {
-        this.element!.classList.add(this.props.class);
-        this.element!.setAttribute('id', this.props.class);
         const inputs: Input[] = [];
         this.props.inputs.forEach((element: inputProps) => inputs.push(new Input({ ...element, form_class: this.props.class })));
         this.children.inputs = inputs;

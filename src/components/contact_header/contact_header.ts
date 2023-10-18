@@ -3,7 +3,7 @@ import template from './contact_header.hbs';
 
 export class ContactHeader extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {

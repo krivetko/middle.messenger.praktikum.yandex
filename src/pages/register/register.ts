@@ -67,7 +67,7 @@ const register_context: formProps = {
 
 export class RegisterPage extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   init() {
